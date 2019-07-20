@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><security-settings xmlns="http://asta.ir/core/portal/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" prefix="iascotest." xsi:schemaLocation="http://asta.ir/core/portal/security http://asta.ir/core/portal/security ">
+
+	<permission-categories>
+	</permission-categories>
+	
+	<permission-subjects>
+		<!-- 
+		<subject code="log" title="وقايع" />
+		 -->
+	</permission-subjects>	
+
+	<permissions>
+		<activity code="root" title="iascotest root"/>
+	 
+	 
+	<activity code="customtechnicalspecification" parent="root" title="مدیریت مشخصه های فنی"/>
+    <activity category="datamanagement-search" code="customtechnicalspecification.list" parent="customtechnicalspecification" title="لیست مشخصه های فنی" viewable="true"/>
+    <activity category="datamanagement-search" code="customtechnicalspecification.options" parent="customtechnicalspecification" title="انتخاب مشخصه فنی" viewable="true"/>
+    <activity category="datamanagement-view" code="customtechnicalspecification.view" parent="customtechnicalspecification" title="مشاهده مشخصه فنی" viewable="true"/>
+    <activity category="datamanagement-create" code="customtechnicalspecification.create" parent="customtechnicalspecification" title="ایجاد مشخصه فنی" viewable="true"/>
+    <activity category="datamanagement-update" code="customtechnicalspecification.update" parent="customtechnicalspecification" title="بروزرسانی مشخصه فنی" viewable="true"/>
+    <activity category="datamanagement-delete" code="customtechnicalspecification.delete" parent="customtechnicalspecification" title="حذف مشخصه فنی" viewable="true"/>
+  <activity code="mypost" parent="root" title="مدیریت MyPostEntities"/>
+    <activity category="datamanagement-search" code="mypost.list" parent="mypost" title="لیست MyPostEntities" viewable="true"/>
+    <activity category="datamanagement-search" code="mypost.options" parent="mypost" title="انتخاب MyPostEntity" viewable="true"/>
+    <activity category="datamanagement-view" code="mypost.view" parent="mypost" title="مشاهده MyPostEntity" viewable="true"/>
+    <activity category="datamanagement-create" code="mypost.create" parent="mypost" title="ایجاد MyPostEntity" viewable="true"/>
+    <activity category="datamanagement-update" code="mypost.update" parent="mypost" title="بروزرسانی MyPostEntity" viewable="true"/>
+    <activity category="datamanagement-delete" code="mypost.delete" parent="mypost" title="حذف MyPostEntity" viewable="true"/>
+  <activity code="myrequest" parent="root" title="مدیریت MyRequestEntities"/>
+    <activity category="datamanagement-search" code="myrequest.list" parent="myrequest" title="لیست MyRequestEntities" viewable="true"/>
+    <activity category="datamanagement-search" code="myrequest.options" parent="myrequest" title="انتخاب MyRequestEntity" viewable="true"/>
+    <activity category="datamanagement-view" code="myrequest.view" parent="myrequest" title="مشاهده MyRequestEntity" viewable="true"/>
+    <activity category="datamanagement-create" code="myrequest.create" parent="myrequest" title="ایجاد MyRequestEntity" viewable="true"/>
+    <activity category="datamanagement-update" code="myrequest.update" parent="myrequest" title="بروزرسانی MyRequestEntity" viewable="true"/>
+    <activity category="datamanagement-delete" code="myrequest.delete" parent="myrequest" title="حذف MyRequestEntity" viewable="true"/>
+  <activity code="myresponsible" parent="root" title="مدیریت MyResponsibleEntities"/>
+    <activity category="datamanagement-search" code="myresponsible.list" parent="myresponsible" title="لیست MyResponsibleEntities" viewable="true"/>
+    <activity category="datamanagement-search" code="myresponsible.options" parent="myresponsible" title="انتخاب MyResponsibleEntity" viewable="true"/>
+    <activity category="datamanagement-view" code="myresponsible.view" parent="myresponsible" title="مشاهده MyResponsibleEntity" viewable="true"/>
+    <activity category="datamanagement-create" code="myresponsible.create" parent="myresponsible" title="ایجاد MyResponsibleEntity" viewable="true"/>
+    <activity category="datamanagement-update" code="myresponsible.update" parent="myresponsible" title="بروزرسانی MyResponsibleEntity" viewable="true"/>
+    <activity category="datamanagement-delete" code="myresponsible.delete" parent="myresponsible" title="حذف MyResponsibleEntity" viewable="true"/>
+  <activity code="cutecspec" parent="root" title="مدیریت مشخصه های فنی"/>
+    <activity category="datamanagement-search" code="cutecspec.list" parent="cutecspec" title="لیست مشخصه های فنی" viewable="true"/>
+    <activity category="datamanagement-search" code="cutecspec.options" parent="cutecspec" title="انتخاب مشخصه فنی" viewable="true"/>
+    <activity category="datamanagement-view" code="cutecspec.view" parent="cutecspec" title="مشاهده مشخصه فنی" viewable="true"/>
+    <activity category="datamanagement-create" code="cutecspec.create" parent="cutecspec" title="ایجاد مشخصه فنی" viewable="true"/>
+    <activity category="datamanagement-update" code="cutecspec.update" parent="cutecspec" title="بروزرسانی مشخصه فنی" viewable="true"/>
+    <activity category="datamanagement-delete" code="cutecspec.delete" parent="cutecspec" title="حذف مشخصه فنی" viewable="true"/>
+  </permissions>
+	
+	<roles>
+		<!-- 
+		<role code="ROLE_NEW"   title="نقش جدید" directAssignToUser="true" role-permissions="iascotest.root" />
+		 -->
+	</roles>
+
+	<superusers>
+	<!-- 
+		<superuser username="root" password="root" first-name="مدير"
+			last-name="سيستم پورتال" 
+			user-roles="ROLE_ADMIN,ROLE_NEW" enabled="true" />
+	 -->
+	</superusers>
+
+</security-settings>

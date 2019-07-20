@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="portal-install" basedir=".">
+	<target name="input">
+		<propertyfile file="${workspace.config.dir}/iascotest.properties">
+		</propertyfile>
+	</target>
+
+	<target name="pre-copy">
+	</target>
+
+	<target name="update">
+		<antcall target="copy" />
+	</target>
+
+	<target name="copy">
+
+		<property file="${workspace.config.dir}/appserver.properties" />
+		<property file="${workspace.config.dir}/portal.properties" />
+		<property file="${workspace.config.dir}/iascotest.properties" />
+
+		<property name="iascotest.deploy.dir" value="${appserver.deploy.dir}/iascotest${appserver.webapp.extension}" />
+		<property name="iascotest.webapp.deploy.dir" value="${iascotest.deploy.dir}" />
+		<property name="portal.plugin.dir" value="${installer.plugins.dir}/portal" />
+
+		<mkdir dir="${iascotest.webapp.deploy.dir}" />
+		<mkdir dir="${iascotest.webapp.deploy.dir}/WEB-INF/lib" />
+
+		<unjar dest="${iascotest.webapp.deploy.dir}" src="${plugin.dir}/iascotest.war" overwrite="true" />
+		<fileset id="newlib" dir="${plugin.dir}/lib">
+			<different targetdir="${appserver.lib.dir}" ignoreFileTimes="true" />
+			<exclude name="**/jsp-api*.jar" />
+			<exclude name="**/servlet-api*.jar" />
+			<exclude name="**/jta*.jar" />
+		</fileset>
+		<copy todir="${iascotest.webapp.deploy.dir}/WEB-INF/lib" verbose="true" >
+			<fileset refid="newlib" />
+			<mapper type="flatten" />
+		</copy>
+	</target>
+
+	<target name="config">
+		<property file="${workspace.config.dir}/appserver.properties" />
+		<property file="${workspace.config.dir}/portal.properties" />
+		<property file="${workspace.config.dir}/iascotest.properties" />
+	</target>
+
+	<target name="post-config">
+	</target>
+
+	<target name="db-migrate">
+	</target>
+
+</project>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+    <changeSet author="generator" failOnError="true" id="createRevInfoTable">
+        <preConditions onError="MARK_RAN" onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="REVINFO"/>
+            </not>
+        </preConditions>
+        <createTable tableName="REVINFO">
+            <column name="ID" type="NUMBER(10, 0)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="TIMESTAMP" type="NUMBER(19, 0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="USERIDENTIFIER" type="VARCHAR2(255 CHAR)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="generator" failOnError="true" id="changeSetForCreateTables-byGenerator">
+        <createTable tableName="MY_RESPONSIBLE">
+            <column autoIncrement="true" name="MY_RESPONSIBLE_ID"
+                type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="TITLE" type="nvarchar(255)"/>
+            <column name="ACTIVE" type="NUMBER(1, 0)"/>
+            <column name="FK_POST" type="BIGINT"/>
+            <column name="FK_REQUEST" type="BIGINT"/>
+        </createTable>
+        <createTable tableName="MY_POST">
+            <column autoIncrement="true" name="MY_POST_ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="TITLE" type="nvarchar(255)"/>
+            <column name="POST_CODE" type="BIGINT"/>
+        </createTable>
+        <createTable tableName="MY_REQUEST">
+            <column autoIncrement="true" name="MY_REQUEST_ID"
+                type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="TITLE" type="nvarchar(255)"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="FK_POST"
+            baseTableName="MY_RESPONSIBLE"
+            constraintName="CN_074-4caf-9428-9406cc3798e0"
+            referencedColumnNames="MY_POST_ID" referencedTableName="MY_POST"/>
+        <addForeignKeyConstraint baseColumnNames="FK_REQUEST"
+            baseTableName="MY_RESPONSIBLE"
+            constraintName="CN_ff0-4e64-b9bd-bd607a87a2c9"
+            referencedColumnNames="MY_REQUEST_ID" referencedTableName="MY_REQUEST"/>
+    </changeSet>
+    <changeSet author="generator" dbms="oracle, db2" failOnError="true" id="createSequence">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <sequenceExists sequenceName="HIBERNATE_SEQUENCE"/>
+            </not>
+        </preConditions>
+        <createSequence sequenceName="HIBERNATE_SEQUENCE"/>
+    </changeSet>
+</databaseChangeLog>
