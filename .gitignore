@@ -1,0 +1,35 @@
+# RENAME THIS FILE FROM GITIGNORE TO .gitignore
+target/
+overlays/
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+proguard/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+
+### Gradle  ###
+.gradletasknamecache
+.gradle/
+build/
+bin/
+
+### VS Code ###
+.vscode/
