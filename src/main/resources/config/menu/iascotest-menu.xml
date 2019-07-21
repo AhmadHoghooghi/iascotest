@@ -5,6 +5,6 @@
 		</menu-group>
   <menu-item activity-codes="iascotest.mypost.list" id="myPostList" title="لیست پست ها" url="mypost/list"/>
   <menu-item activity-codes="iascotest.myrequest.list" id="myRequestList" title="لیست درخواست ها" url="myrequest/list"/>
-  <menu-item activity-codes="iascotest.myresponsible.list" id="myResponsibleList" title="لیست مسئولین" url="myresponsible/list"/>
+  <!--<menu-item activity-codes="iascotest.myresponsible.list" id="myResponsibleList" title="لیست مسئولین" url="myresponsible/list"/>-->
   </tab>
 </menu>

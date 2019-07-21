@@ -74,6 +74,9 @@
             <button data-ng-click="display(data_row.pk)" class="btn btn-list" data-popover-trigger="mouseenter" data-ng-show="data.permissions.viewable" data-popover="{{message('btn_view_text')}}">
               <span class="glyphicon glyphicon-eye-open"></span>
             </button>
+            <button data-ng-click="manageResponsibles(data_row.pk)" class="btn btn-list" data-popover-trigger="mouseenter" data-ng-show="data.permissions.updatable" data-popover="{{message('myResponsible_plural')}}">
+              <span class="glyphicon glyphicon-user"></span>
+            </button>
           </td>
         </tr>
         <tr style="margin:0px;padding:0px;line-height:0.001pt;font-size:0.001pt;">
