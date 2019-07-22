@@ -16,7 +16,7 @@ angular.module('iascotest.myresponsible')
                         $.fn.hideLoading(loading);
                         if (data.success) {
                             flash.success = data.message;
-                            updateCallback = function () {
+                            updateCallback = function () {//prevent application from going to responsible list on dialogue close
                                 modalInstance.close()
                             }
 
@@ -71,8 +71,6 @@ angular.module('iascotest.myresponsible')
         if($scope.parameters && $scope.parameters.myrequestId){//calling list from SetResponsibleForRequestCtrl
             $scope.parameters['eq:request.pk'] = $scope.parameters.myrequestId;
         }
-
-
      	iascotestControllerService.applyListCtrl($scope,'myResponsible', MyresponsibleResource, function (data) {
         $.fn.hideLoading(loading);
       });

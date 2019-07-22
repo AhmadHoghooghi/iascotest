@@ -13,6 +13,9 @@ angular.module('iascotest.myrequest')
         iascotestControllerService.applyListCtrl($scope, 'myRequest', MyrequestResource, function (data) {
             $.fn.hideLoading(loading);
         });
+        //this method opens dialogue to manger list of responsibles fo a request
+        //A new html and controller is created for this dialogue
+        // note how primary key of request is passed
         $scope.manageResponsibles = function(masterpk){
             dialogs.create('/iascotest/angular/myrequest/myrequest_editresponsible.html', 'SetResponsibleForRequestCtrl', {masterpk:masterpk});
         };
@@ -29,16 +32,15 @@ angular.module('iascotest.myrequest')
     //todo something else should be injected insted of 'MyrequestResource'; or??
     .controller('SetResponsibleForRequestCtrl', ['$scope', 'MyrequestResource', 'iascotestControllerService', 'data', '$modalInstance',
         function ($scope, MyrequestResource, iascotestControllerService, data, modalInstance) {
-        // var loading = $.fn.showLoading();
         iascotestControllerService.init($scope);
 
         iascotestControllerService.applyMinimalCtrl($scope, 'myRequest', MyrequestResource);
-        //applyMinimalCtrl = function ($scope, entityName, remoteResource)
-        //     $.fn.hideLoading(loading);
+        //param to pass to dynamic form and its controller
         $scope.myresponsibleParams = {
+            //this field will hide search panel in customized dialogue
             hideSearchPanel: true,
             masterPK: $scope.id,
-            //
+            //this is how primary key of request is passed
             myrequestId:data.masterpk,
             'filter.eq:request.pk': $scope.id
         };

@@ -36,9 +36,6 @@
 	                    </div>
 	                  </div>
 	                </div>
-                
-				
-				
               </div>
             </div>
           </div>
@@ -74,6 +71,8 @@
             <button data-ng-click="display(data_row.pk)" class="btn btn-list" data-popover-trigger="mouseenter" data-ng-show="data.permissions.viewable" data-popover="{{message('btn_view_text')}}">
               <span class="glyphicon glyphicon-eye-open"></span>
             </button>
+            <!--add icon that opens dialogue to mange responsible list for a request -->
+            <!--see method manageResponsibles in MyrequestListCtrl-->
             <button data-ng-click="manageResponsibles(data_row.pk)" class="btn btn-list" data-popover-trigger="mouseenter" data-ng-show="data.permissions.updatable" data-popover="{{message('myResponsible_plural')}}">
               <span class="glyphicon glyphicon-user"></span>
             </button>

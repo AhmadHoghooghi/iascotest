@@ -1,3 +1,4 @@
+<!--this is an ordinary edit html with customized panel-body -->
 <div class="edit-block">
     <div class="panel-heading background-black max-padding " data-ng-hide="actions.common.params.getParam('hideFormTitle')">
         <h3 class="panel-title color-white">
@@ -7,6 +8,10 @@
         </h3>
     </div>
     <div class="panel-body">
+        <!--customized part-->
+        <!--this is the part most of code reuse is done, we use myresponsible.list.html as content of customized dialogue-->
+        <!--note how some parameters are passed to dynamic-form using params field-->
+        <!--see controller of this dialogue (SetResponsibleForRequestCtrl) for more information about params-->
         <iascotest-dynamic-form template="/iascotest/angular/myresponsible/myresponsible.list.html" controller="MyresponsibleListCtrl"
                                 params="myresponsibleParams">
         </iascotest-dynamic-form>
